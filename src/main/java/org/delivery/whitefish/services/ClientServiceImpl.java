@@ -21,11 +21,11 @@ public class ClientServiceImpl implements ClientService {
 
     private ClientMapper clientMapper;
 
+
     public ClientServiceImpl(ClientRepository clientRepository, ClientMapper clientMapper) {
         this.clientRepository = clientRepository;
         this.clientMapper = clientMapper;
     }
-
 
     @Override
     public ClientDtoResponse save(ClientDtoRequest clientDtoRequest) {
