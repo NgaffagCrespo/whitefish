@@ -19,16 +19,14 @@ public class FishServiceImpl implements FishService {
     private FishRepository fishRepository;
     private FishMapper fishMapper;
 
-    public FishServiceImpl(FishRepository fishRepository, FishMapper fishMapper) {
+    public FishServiceImpl(FishRepository fishRepository) {
         this.fishRepository = fishRepository;
-        this.fishMapper = fishMapper;
     }
 
     @Override
-    public FishDtoResponse save(FishDtoRequest fishDtoRequest) {
+    public Fish save(Fish fish) {
 
         // Ici nous allons mapper fishDtoRequest en fish enfin de pouvoir le save
-        Fish fish = fishMapper.FromDtoFishRequest_ToFish(fishDtoRequest);
 
         //ici nous allons generer un mode de passe aleatoire pour fish
         fish.setId(UUID.randomUUID().toString());
@@ -36,10 +34,7 @@ public class FishServiceImpl implements FishService {
         // Ici on sauvegarde fish
         Fish savedFish = fishRepository.save(fish);
 
-        //Ici nous allons mapper de nouveau fishsaved vers fishDtoResponse pour une response
-        FishDtoResponse fishDtoResponse = fishMapper.FromFish_ToFishResponseDto(savedFish);
-
-        return fishDtoResponse;
+        return savedFish;
     }
 
     @Override

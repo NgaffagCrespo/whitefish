@@ -22,22 +22,18 @@ public class ClientServiceImpl implements ClientService {
     private ClientMapper clientMapper;
 
 
-    public ClientServiceImpl(ClientRepository clientRepository, ClientMapper clientMapper) {
+    public ClientServiceImpl(ClientRepository clientRepository) {
         this.clientRepository = clientRepository;
-        this.clientMapper = clientMapper;
     }
 
     @Override
-    public ClientDtoResponse save(ClientDtoRequest clientDtoRequest) {
+    public Client save(Client client) {
 
-        Client client = clientMapper.FromDtoClientRequest_ToClient(clientDtoRequest);
         client.setId(UUID.randomUUID().toString());
 
         Client savedClient = clientRepository.save(client);
 
-        ClientDtoResponse clientDtoResponse = clientMapper.FromClient_ToDtoClientResponse(savedClient);
-
-        return clientDtoResponse;
+        return savedClient;
     }
 
     @Override

@@ -1,8 +1,10 @@
 package org.delivery.whitefish.web;
 
 import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import org.delivery.whitefish.dtos.ClientDtoRequest;
 import org.delivery.whitefish.dtos.ClientDtoResponse;
+import org.delivery.whitefish.entities.Client;
 import org.delivery.whitefish.services.ClientService;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,6 +12,7 @@ import java.util.List;
 
 @RestController
 @AllArgsConstructor
+@NoArgsConstructor
 @RequestMapping(path = "/deliveryWhiteFish")
 public class ClientRestService {
 
@@ -26,8 +29,8 @@ public class ClientRestService {
     }
 
     @PostMapping(path = "/client")
-   public ClientDtoResponse storeClient(ClientDtoRequest clientDtoRequest){
-        return clientService.save(clientDtoRequest);
+   public Client storeClient(Client client){
+        return clientService.save(client);
     }
 
 }

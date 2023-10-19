@@ -4,6 +4,7 @@ package org.delivery.whitefish.web;
 import lombok.AllArgsConstructor;
 import org.delivery.whitefish.dtos.FishDtoRequest;
 import org.delivery.whitefish.dtos.FishDtoResponse;
+import org.delivery.whitefish.entities.Fish;
 import org.delivery.whitefish.services.FishService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -29,8 +30,8 @@ public class FishRestService {
         }
 
         @PostMapping(path = "/fish")
-    public FishDtoResponse storeFish(FishDtoRequest fishDtoRequest){
-       return fishService.save(fishDtoRequest);
+    public Fish storeFish(Fish fish){
+       return fishService.save(fish);
         }
 
 
