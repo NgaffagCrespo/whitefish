@@ -39,7 +39,7 @@ public class EmailServiceImpl implements EmailService {
                             "\nNom du poisson \n" + fish.getName() +
                             "\nQuantite \n" + fish.getQuantity() +
                             "\nPrix unitaire de poisson \n" + fish.getUnit_price() +
-                            "\nNumero de telephone du client \n" + emailfun.getClient().getTel() +
+                            "\nNumero de téléphone du client \n" + emailfun.getClient().getTel() +
                             "\nQuartier du client \n" + emailfun.getClient().getLocalisation() +
                             "\nNom du client \n" + emailfun.getClient().getName());
                 }
