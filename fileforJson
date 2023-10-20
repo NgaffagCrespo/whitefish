@@ -1,0 +1,43 @@
+{
+    
+   "client" : {
+        "tel" : "6255478",
+        "email" : "toto@gmail.com",
+        "localisation" : "logpom",
+        "name" : "crespo",
+        
+    "bills" : [
+                {
+                  "amount" : 5.52,
+                  "fishList" : [
+                      {
+                          "unit_price" : 2500,
+                          "quantity" : 3,
+                          "name" : "maquereau"
+                      },
+                      {
+                          "unit_price" : 5000,
+                          "quantity" : 3,
+                          "name" : "sillure"
+                      }
+                  ]
+                },
+                {
+                  "amount" : 100,
+                  "fishList" : [
+                      {
+                          "unit_price" : 2500,
+                          "quantity" : 3,
+                          "name" : "sol"
+                      },
+                      {
+                          "unit_price" : 5000,
+                          "quantity" : 3,
+                          "name" : "bossu"
+                      }
+                  ]
+                }
+                
+              ]
+    }
+}
