@@ -5,6 +5,7 @@ import org.delivery.whitefish.repositories.BillRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
@@ -23,6 +24,7 @@ public class BillServiceImpl implements BillService {
     public Bills save(Bills bills) {
 
         bills.setId(UUID.randomUUID().toString());
+        bills.setDate_bill(new Date());
 
         Bills savedBill = billRepository.save(bills);
 
